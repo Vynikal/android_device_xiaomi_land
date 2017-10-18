@@ -255,5 +255,16 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
+#MicroG
+PRODUCT_PACKAGES += \
+    GmsCore \
+    GsfProxy \
+    FakeStore
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/microg/com.google.android.maps.jar:system/framework/com.google.android.maps.jar \
+    $(LOCAL_PATH)/microg/com.google.android.maps.xml:system/etc/permissions/com.google.android.maps.xml \
+    $(LOCAL_PATH)/microg/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
+
 # Inherit proprietary files
 $(call inherit-product-if-exists, vendor/xiaomi/land/land-vendor.mk)
